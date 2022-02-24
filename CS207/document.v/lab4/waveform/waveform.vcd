@@ -1,0 +1,39 @@
+$date
+	Tue Mar 17 20:01:54 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module waveform $end
+$var reg 1 ! a $end
+$var reg 1 " b $end
+$var reg 1 # c $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0#
+0"
+0!
+$end
+#5
+1!
+#10
+0!
+#15
+1!
+#20
+0!
+1#
+1"
+#25
+0"
+#30
+0#
+#40
+1#
+1"
+#50

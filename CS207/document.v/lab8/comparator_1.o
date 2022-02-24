@@ -1,0 +1,70 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-642-g3bdb50da)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_000000000087dee0 .scope module, "comparator_1_tb" "comparator_1_tb" 2 1;
+ .timescale 0 0;
+v0000000000979ff0_0 .var "A", 0 0;
+v000000000097a4f0_0 .var "B", 0 0;
+v000000000097a3b0_0 .net "F", 2 0, L_000000000097a270;  1 drivers
+S_000000000087e070 .scope module, "com_1" "comparator_1" 2 5, 3 1 0, S_000000000087dee0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 3 "F";
+    .port_info 1 /INPUT 1 "A";
+    .port_info 2 /INPUT 1 "B";
+L_000000000087bc60 .functor NOT 1, v0000000000979ff0_0, C4<0>, C4<0>, C4<0>;
+L_000000000087bcd0 .functor AND 1, L_000000000087bc60, v000000000097a4f0_0, C4<1>, C4<1>;
+L_000000000087bd40 .functor NOT 1, v000000000097a4f0_0, C4<0>, C4<0>, C4<0>;
+L_000000000097b560 .functor AND 1, L_000000000087bc60, L_000000000087bd40, C4<1>, C4<1>;
+L_000000000097b090 .functor AND 1, v0000000000979ff0_0, v000000000097a4f0_0, C4<1>, C4<1>;
+L_000000000097b640 .functor OR 1, L_000000000097b560, L_000000000097b090, C4<0>, C4<0>;
+L_000000000097b5d0 .functor AND 1, v0000000000979ff0_0, L_000000000087bd40, C4<1>, C4<1>;
+v000000000087a4c0_0 .net "A", 0 0, v0000000000979ff0_0;  1 drivers
+v000000000087e200_0 .net "B", 0 0, v000000000097a4f0_0;  1 drivers
+v000000000087ccc0_0 .net "F", 2 0, L_000000000097a270;  alias, 1 drivers
+v000000000087cd60_0 .net *"_s0", 0 0, L_000000000087bcd0;  1 drivers
+v000000000087b940_0 .net *"_s2", 0 0, L_000000000097b640;  1 drivers
+v000000000087b9e0_0 .net *"_s4", 0 0, L_000000000097b5d0;  1 drivers
+v000000000087ba80_0 .net "and2", 0 0, L_000000000097b560;  1 drivers
+v000000000087bb20_0 .net "and3", 0 0, L_000000000097b090;  1 drivers
+v000000000087bbc0_0 .net "not1", 0 0, L_000000000087bc60;  1 drivers
+v00000000009799b0_0 .net "not2", 0 0, L_000000000087bd40;  1 drivers
+L_000000000097a270 .concat8 [ 1 1 1 0], L_000000000087bcd0, L_000000000097b640, L_000000000097b5d0;
+    .scope S_000000000087dee0;
+T_0 ;
+    %vpi_call 2 8 "$monitor", "%3t: A is %b, B is %b, F0 is %b, F1 is %b, F2 is %b.", $time, v0000000000979ff0_0, v000000000097a4f0_0, &PV<v000000000097a3b0_0, 0, 1>, &PV<v000000000097a3b0_0, 1, 1>, &PV<v000000000097a3b0_0, 2, 1> {0 0 0};
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000979ff0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000097a4f0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000979ff0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000097a4f0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000979ff0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000000000097a4f0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000979ff0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000000000097a4f0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 14 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "comparator_1_tb.v";
+    "comparator_1.v";

@@ -1,0 +1,120 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-642-g3bdb50da)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_000000000123e920 .scope module, "mux4to1_tb" "mux4to1_tb" 2 16;
+ .timescale 0 0;
+v00000000010b6b00_0 .var "IN", 3 0;
+v00000000010b6ba0_0 .net "OUT", 0 0, L_0000000001092a00;  1 drivers
+v00000000010b6c40_0 .var "S", 1 0;
+S_0000000001092720 .scope module, "mux" "mux4to1" 2 20, 2 1 0, S_000000000123e920;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "Y";
+    .port_info 1 /INPUT 4 "D";
+    .port_info 2 /INPUT 2 "A";
+L_000000000123ebc0 .functor NOT 1, L_00000000010b6ce0, C4<0>, C4<0>, C4<0>;
+L_00000000010b4cf0 .functor NOT 1, L_00000000010b6d80, C4<0>, C4<0>, C4<0>;
+L_00000000010b83a0 .functor AND 1, L_000000000111bde0, L_00000000010b4cf0, L_000000000123ebc0, C4<1>;
+L_00000000010928b0 .functor AND 1, L_000000000111b480, L_00000000010b4cf0, L_000000000111bb60, C4<1>;
+L_0000000001092920 .functor AND 1, L_000000000111a4e0, L_000000000111aee0, L_000000000123ebc0, C4<1>;
+L_0000000001092990 .functor AND 1, L_000000000111a3a0, L_000000000111b160, L_000000000111bac0, C4<1>;
+L_0000000001092a00 .functor OR 1, L_00000000010b83a0, L_00000000010928b0, L_0000000001092920, L_0000000001092990;
+v00000000010b6060_0 .net "A", 1 0, v00000000010b6c40_0;  1 drivers
+v00000000010b6880_0 .net "D", 3 0, v00000000010b6b00_0;  1 drivers
+v00000000010b6560_0 .net "Y", 0 0, L_0000000001092a00;  alias, 1 drivers
+v00000000010b6920_0 .net *"_s1", 0 0, L_00000000010b6ce0;  1 drivers
+v00000000010b6100_0 .net *"_s11", 0 0, L_000000000111a4e0;  1 drivers
+v00000000010b67e0_0 .net *"_s13", 0 0, L_000000000111aee0;  1 drivers
+v00000000010b5fc0_0 .net *"_s15", 0 0, L_000000000111a3a0;  1 drivers
+v00000000010b6600_0 .net *"_s17", 0 0, L_000000000111b160;  1 drivers
+v00000000010b64c0_0 .net *"_s19", 0 0, L_000000000111bac0;  1 drivers
+v00000000010b6e20_0 .net *"_s3", 0 0, L_00000000010b6d80;  1 drivers
+v00000000010b61a0_0 .net *"_s5", 0 0, L_000000000111bde0;  1 drivers
+v00000000010b69c0_0 .net *"_s7", 0 0, L_000000000111b480;  1 drivers
+v00000000010b6a60_0 .net *"_s9", 0 0, L_000000000111bb60;  1 drivers
+v00000000010b66a0_0 .net "na0", 0 0, L_000000000123ebc0;  1 drivers
+v00000000010b62e0_0 .net "na1", 0 0, L_00000000010b4cf0;  1 drivers
+v00000000010b6380_0 .net "y0", 0 0, L_00000000010b83a0;  1 drivers
+v00000000010b6420_0 .net "y1", 0 0, L_00000000010928b0;  1 drivers
+v00000000010b5f20_0 .net "y2", 0 0, L_0000000001092920;  1 drivers
+v00000000010b6740_0 .net "y3", 0 0, L_0000000001092990;  1 drivers
+L_00000000010b6ce0 .part v00000000010b6c40_0, 0, 1;
+L_00000000010b6d80 .part v00000000010b6c40_0, 1, 1;
+L_000000000111bde0 .part v00000000010b6b00_0, 0, 1;
+L_000000000111b480 .part v00000000010b6b00_0, 1, 1;
+L_000000000111bb60 .part v00000000010b6c40_0, 0, 1;
+L_000000000111a4e0 .part v00000000010b6b00_0, 2, 1;
+L_000000000111aee0 .part v00000000010b6c40_0, 1, 1;
+L_000000000111a3a0 .part v00000000010b6b00_0, 3, 1;
+L_000000000111b160 .part v00000000010b6c40_0, 1, 1;
+L_000000000111bac0 .part v00000000010b6c40_0, 0, 1;
+    .scope S_000000000123e920;
+T_0 ;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6b00_0, 4, 1;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6b00_0, 4, 1;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 2, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6b00_0, 4, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 3, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6b00_0, 4, 1;
+    %vpi_call 2 23 "$display", "IN0 = %b, IN1 = %b, IN2 = %b, IN3 = %b", &PV<v00000000010b6b00_0, 0, 1>, &PV<v00000000010b6b00_0, 1, 1>, &PV<v00000000010b6b00_0, 2, 1>, &PV<v00000000010b6b00_0, 3, 1> {0 0 0};
+    %vpi_call 2 24 "$monitor", "%3t: S1 = %b, S0 = %b, OUT = %b", $time, &PV<v00000000010b6c40_0, 1, 1>, &PV<v00000000010b6c40_0, 0, 1>, v00000000010b6ba0_0 {0 0 0};
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6c40_0, 4, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6c40_0, 4, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6c40_0, 4, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6c40_0, 4, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6c40_0, 4, 1;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6c40_0, 4, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6c40_0, 4, 1;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v00000000010b6c40_0, 4, 1;
+    %delay 10, 0;
+    %vpi_call 2 29 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "mux4to1.v";
